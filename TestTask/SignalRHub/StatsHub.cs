@@ -11,16 +11,17 @@ namespace TestTask.SignalRHub
         {
             _context = context;
         }
+        //public async Task SendStats()
+        //{
+        //    var stats = new
+        //    {
+        //        IssuedBooksCount = _context.Books.Count(b => b.IsIssued),
+        //        OnlineUsersCount = _context.Users.Count(u => u.IsOnline)
+        //    };
 
-        public async Task SendStatsUpdate()
-        {
-            var stats = new
-            {
-                IssuedBooksCount = _context.Books.Count(b => b.IsIssued),
-                OnlineUsersCount = _context.Users.Count(u => u.IsOnline)
-            };
+        //    Console.WriteLine($"Sending stats update: IssuedBooksCount = {stats.IssuedBooksCount}, OnlineUsersCount = {stats.OnlineUsersCount}");
 
-            await Clients.All.SendAsync("ReceiveStatsUpdate", stats);
-        }
+        //    await Clients.All.SendAsync("ReceiveStatsUpdate", stats);
+        //}
     }
 }
